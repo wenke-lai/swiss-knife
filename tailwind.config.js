@@ -8,6 +8,8 @@ export default {
     // SVG
     "./src/**/*.svg",
   ],
+  // toggling dark mode manually
+  darkMode: "selector",
   theme: {
     extend: {},
   },
