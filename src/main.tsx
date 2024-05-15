@@ -22,7 +22,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ThemeProvider>
-      <IconContext.Provider value={{ className: "w-full h-auto" }}>
+      <IconContext.Provider value={{ className: "w-full h-auto text-3xl" }}>
         <RouterProvider router={router} />
       </IconContext.Provider>
     </ThemeProvider>
