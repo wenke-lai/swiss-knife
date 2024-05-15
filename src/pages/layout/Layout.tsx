@@ -6,9 +6,9 @@ import {
 } from "@headlessui/react";
 import { useState } from "react";
 import { TbSettings, TbUserCircle } from "react-icons/tb";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
-export const Header = () => {
+const Header = () => {
   const [search, setSearch] = useState("");
   return (
     <header className="min-h-16 grid grid-cols-[1fr,auto] px-16 py-4">
@@ -53,20 +53,25 @@ export const Header = () => {
   );
 };
 
-export const Sidebar = () => {
+const Sidebar = () => {
   return (
-    <aside className="grid grid-rows-[1fr,auto] overflow-hidden h-dvh">
+    <aside className="grid grid-rows-[auto,1fr,auto] gap-4 p-4 overflow-hidden h-dvh">
+      <div>
+        <Link to="/">
+          <h1>Wenke Studio</h1>
+        </Link>
+      </div>
       <menu>
-        <li>link</li>
-        <li>link</li>
-        <li>link</li>
+        <li>
+          <Link to="/color">Color</Link>
+        </li>
       </menu>
       <footer>copyright</footer>
     </aside>
   );
 };
 
-export const Layouts = () => {
+const Layout = () => {
   return (
     <div className="grid grid-cols-[auto,1fr] w-full h-dvh divide-x">
       <Sidebar />
@@ -77,3 +82,5 @@ export const Layouts = () => {
     </div>
   );
 };
+
+export default Layout;

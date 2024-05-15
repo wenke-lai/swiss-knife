@@ -2,19 +2,19 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { IconContext } from "react-icons";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { PickNearestColor } from "./PickNearestColor";
 import { ThemeProvider } from "./hooks/useTheme";
-import { Layouts } from "./pages/Layout";
+import { Color } from "./pages/color";
+import { Layout } from "./pages/layout";
 
 import "./index.css";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layouts />,
+    element: <Layout.Layout />,
     children: [
       { index: true, element: <div>Hello World</div> },
-      { path: "color", element: <PickNearestColor /> },
+      { path: "color", element: <Color.Picker /> },
     ],
   },
 ]);

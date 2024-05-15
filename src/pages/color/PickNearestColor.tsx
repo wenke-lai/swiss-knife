@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import { Color } from "./utils/colors";
+import { Color } from "../../utils/colors";
 
 const color = new Color();
 
-export const PickNearestColor = () => {
+const PickNearestColor = () => {
   const [value, setValue] = useState<string>("#ffffff");
 
   const refInput = useRef<HTMLDivElement>(null);
@@ -11,8 +11,7 @@ export const PickNearestColor = () => {
 
   const nearest = color.nearest(value);
 
-  const handleColorChange = (e) => {
-    let colorValue = e.target.value;
+  const handleColorChange = (colorValue: string) => {
     if (!colorValue.startsWith("#")) {
       colorValue = "#" + colorValue;
     }
@@ -35,7 +34,7 @@ export const PickNearestColor = () => {
         className="border border-gray-600 rounded-sm"
         type="text"
         value={value}
-        onChange={handleColorChange}
+        onChange={(e) => handleColorChange(e.target.value)}
         autoFocus
         onFocus={(e) => e.target.select()}
       />
@@ -61,3 +60,5 @@ export const PickNearestColor = () => {
     </div>
   );
 };
+
+export default PickNearestColor;
