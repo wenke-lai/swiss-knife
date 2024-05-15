@@ -24,12 +24,12 @@
   }
 
   section {
-    @apply dark:bg-gray-800;
+    @apply h-64 p-4 dark:bg-gray-800 rounded-xl min-h-16 min-w-16;
   }
 }
 
 @layer utilities {
   .debug {
-    @apply border border-red-500;
+    @apply border-4 border-red-500;
   }
 }
