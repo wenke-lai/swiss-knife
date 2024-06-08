@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Color } from "../../utils/colors";
+import { Color } from "src/utils/colors";
 
 const color = new Color();
 
