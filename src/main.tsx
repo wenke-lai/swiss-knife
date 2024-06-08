@@ -3,21 +3,20 @@ import ReactDOM from "react-dom/client";
 import { IconContext } from "react-icons";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "./hooks/useTheme";
-// import { Color } from "./pages/color";
-// import { Dashboard } from "./pages/dashboard";
-// import { Layout } from "./pages/layout";
+import { Color } from "./pages/color";
+import { Dashboard } from "./pages/dashboard";
+import { Layout } from "./pages/layout";
 
 import "./index.css";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>hello</div>,
-    // element: <Layout.Layout />,
-    // children: [
-    //   { index: true, element: <Dashboard.Home /> },
-    //   { path: "color", element: <Color.Picker /> },
-    // ],
+    element: <Layout.Layout />,
+    children: [
+      { index: true, element: <Dashboard.Home /> },
+      { path: "color", element: <Color.Picker /> },
+    ],
   },
 ]);
 
