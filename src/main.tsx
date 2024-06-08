@@ -2,19 +2,20 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { IconContext } from "react-icons";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { PickNearestColor } from "./PickNearestColor";
 import { ThemeProvider } from "./hooks/useTheme";
-import { Layouts } from "./pages/Layout";
+import { Color } from "./pages/color";
+import { Dashboard } from "./pages/dashboard";
+import { Layout } from "./pages/layout";
 
 import "./index.css";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layouts />,
+    element: <Layout.Layout />,
     children: [
-      { index: true, element: <div>Hello World</div> },
-      { path: "color", element: <PickNearestColor /> },
+      { index: true, element: <Dashboard.Home /> },
+      { path: "color", element: <Color.Picker /> },
     ],
   },
 ]);
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ThemeProvider>
-      <IconContext.Provider value={{ className: "w-full h-auto" }}>
+      <IconContext.Provider value={{ className: "w-full h-auto text-3xl" }}>
         <RouterProvider router={router} />
       </IconContext.Provider>
     </ThemeProvider>
